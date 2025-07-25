@@ -19,7 +19,7 @@ dependencies:
   esp-idf-lib/esp_idf_lib_helpers:
     version: "*"
 maintainers:
-  -
+  - Manuel Markwort (@mmarkwort)
 url: https://github.com/esp-idf-lib/core
 repository: https://github.com/esp-idf-lib/tps63101x
 documentation: https://esp-idf-lib.github.io/tps63101x/
