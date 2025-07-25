@@ -11,7 +11,7 @@ Driver for Texas Instruments TPS631012 and TPS631013 1.6-V to 5.5-V Input Voltag
 ## Installation
 
 ```sh
-idf.py add-dependency "esp-idf-lib/tps63101x^1.0.0
+idf.py add-dependency esp-idf-lib/tps63101x^1.0.0
 ```
 
 ## Support
