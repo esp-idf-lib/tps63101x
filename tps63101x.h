@@ -59,19 +59,22 @@ extern "C" {
  */
 typedef struct
 {
-    union {
-        struct {
+    union
+    {
+        struct
+        {
             uint8_t converter_en : 1;   //!< Enable Converter ('AND'ed with EN-pin): 0 : DISABLE, 1 : ENABLE / Default: 0 / RW
             uint8_t nil2 : 1;           //!< Not used. / Default: 0 / R
             uint8_t en_scp : 1;         //!< Enable short circuit hiccup protection: 0 : DISABLE, 1 : ENABLE / Default: 0 / RW
             uint8_t en_fast_dvs : 1;    //!< Sets DVS to fast mode: 0 : DISABLE, 1 : ENABLE / Default: 1 / RW
             uint8_t nil : 4;            //!< Not used. During write operations data for these bits are ignored. During read operations 0 is returned. / Default: 0 / R
         } data_fields;
-        struct {
+        struct
+        {
             uint8_t reg;                //!< Register data
         } register_data;
     };
-    
+
 } tps63101x_control_1_t;
 
 /**
@@ -79,15 +82,18 @@ typedef struct
  */
 typedef struct
 {
-    union {
-        struct {
+    union
+    {
+        struct
+        {
             uint8_t vout;               //!< These bits set the output voltage: Output voltage = 1.000 + (VOUT[7 :0] × 0.025) V when 0x00<=VOUT[7 :0]<=0xB4, Output voltage = 5.5 V when 0xB5<=VOUT[7 :0]<=0xFF / Default: 5C / RW
         } data_fields;
-        struct {
+        struct
+        {
             uint8_t reg;                //!< Register data
         } register_data;
     };
-    
+
 } tps63101x_vout_t;
 
 /**
@@ -95,19 +101,22 @@ typedef struct
  */
 typedef struct
 {
-    union {
-        struct {
+    union
+    {
+        struct
+        {
             uint8_t td_ramp : 3;        //!< Defines the ramp time for the Vo soft start ramp: 000: 0.256ms, 001: 0.512ms, 010: 1.024ms, 011: 1.920ms, 100: 3.584ms, 101: 7.552ms, 110: 9.600ms, 111: 24.320ms / Default: 101 / RW
             uint8_t cl_ramp_min : 1;    //!< Define the minimum current limit during the soft start ramp: 0 : Low (500mA), 1 : High (2x Low) / Default: 0 / RW
             uint8_t en_disch_vout : 2;  //!< Enable of BUBO Vout Discharge: 00 : DISABLE, 01 : SLOW (34mA), 10 : MEDIUM (67mA), 11 : FAST (100mA) / Default: 0 / RW
             uint8_t fast_ramp_en : 1;   //!< Device can start-up faster than VOUT ramp: 0 : DISABLE, 1 : ENABLE / Default: 1 / RW
             uint8_t fpwm : 1;           //!< Force PWM operation: 0 : DISABLE, 1 : ENABLE / Default: 0 / RW
         } data_fields;
-        struct {
+        struct
+        {
             uint8_t reg;                //!< Register data
         } register_data;
     };
-    
+
 } tps63101x_control_2_t;
 
 

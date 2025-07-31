@@ -16,7 +16,7 @@ static const char *MAIN_LOG_TAG = "Main";
 void read_control_1_register(i2c_dev_t* buckBoostConverter)
 {
     ESP_LOGI(MAIN_LOG_TAG, "Reading control 1 register.");
-    
+
     tps63101x_control_1_t control_1;
 
     esp_err_t err = tps63101x_get_control_1(buckBoostConverter, &control_1);
@@ -35,7 +35,7 @@ void read_control_1_register(i2c_dev_t* buckBoostConverter)
 void write_control_1_register(i2c_dev_t* buckBoostConverter, tps63101x_control_1_t* control_1)
 {
     ESP_LOGI(MAIN_LOG_TAG, "Writing control 1 register.");
-    
+
     esp_err_t err = tps63101x_set_control_1(buckBoostConverter, control_1);
 
     if (err != ESP_OK)
@@ -50,7 +50,7 @@ void write_control_1_register(i2c_dev_t* buckBoostConverter, tps63101x_control_1
 void read_vout_register(i2c_dev_t* buckBoostConverter)
 {
     ESP_LOGI(MAIN_LOG_TAG, "Reading vout register.");
-    
+
     tps63101x_vout_t vout;
 
     esp_err_t err = tps63101x_get_vout(buckBoostConverter, &vout);
@@ -69,7 +69,7 @@ void read_vout_register(i2c_dev_t* buckBoostConverter)
 void write_vout_register(i2c_dev_t* buckBoostConverter, tps63101x_vout_t* vout)
 {
     ESP_LOGI(MAIN_LOG_TAG, "Writing vout register.");
-    
+
     esp_err_t err = tps63101x_set_vout(buckBoostConverter, vout);
 
     if (err != ESP_OK)
@@ -84,7 +84,7 @@ void write_vout_register(i2c_dev_t* buckBoostConverter, tps63101x_vout_t* vout)
 void read_control_2_register(i2c_dev_t* buckBoostConverter)
 {
     ESP_LOGI(MAIN_LOG_TAG, "Reading control 2 register.");
-    
+
     tps63101x_control_2_t control_2;
 
     esp_err_t err = tps63101x_get_control_2(buckBoostConverter, &control_2);
@@ -103,7 +103,7 @@ void read_control_2_register(i2c_dev_t* buckBoostConverter)
 void write_control_2_register(i2c_dev_t* buckBoostConverter, tps63101x_control_2_t* control_2)
 {
     ESP_LOGI(MAIN_LOG_TAG, "Writing control 2 register.");
-    
+
     esp_err_t err = tps63101x_set_control_2(buckBoostConverter, control_2);
 
     if (err != ESP_OK)
@@ -127,7 +127,7 @@ void task(void *pvParameters)
     {
         ESP_LOGI(MAIN_LOG_TAG, "Cannot init TPS63101X: %s", esp_err_to_name(err));
         vTaskDelete(NULL);
-        
+
         return;
     }
 
@@ -144,7 +144,7 @@ void task(void *pvParameters)
     read_control_1_register(&buckBoostConverter);
 
     vTaskDelay(pdMS_TO_TICKS(2000));
-   
+
     // Vout register
     read_vout_register(&buckBoostConverter);
 
@@ -154,7 +154,7 @@ void task(void *pvParameters)
     read_control_2_register(&buckBoostConverter);
 
     vTaskDelay(pdMS_TO_TICKS(2000));
-   
+
     ESP_LOGI(MAIN_LOG_TAG, "Finished.");
 
     vTaskDelete(NULL);

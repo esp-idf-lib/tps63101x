@@ -135,7 +135,7 @@ esp_err_t tps63101x_reset(i2c_dev_t *dev)
     control_2.register_data.reg = TPS63101X_CONTROL_2_DEFAULT;
 
     err = tps63101x_set_control_1(dev, &control_1);
-    if(err != ESP_OK)
+    if (err != ESP_OK)
     {
         return err;
     }
@@ -143,7 +143,7 @@ esp_err_t tps63101x_reset(i2c_dev_t *dev)
     vTaskDelay(pdMS_TO_TICKS(1500));
 
     err = tps63101x_set_control_2(dev, &control_2);
-    if(err != ESP_OK)
+    if (err != ESP_OK)
     {
         return err;
     }
@@ -151,7 +151,7 @@ esp_err_t tps63101x_reset(i2c_dev_t *dev)
     vTaskDelay(pdMS_TO_TICKS(1500));
 
     err = tps63101x_set_vout(dev, &vout);
-    if(err != ESP_OK)
+    if (err != ESP_OK)
     {
         return err;
     }
@@ -161,7 +161,7 @@ esp_err_t tps63101x_reset(i2c_dev_t *dev)
 
 uint8_t tps63101x_to_register_voltage(float voltage)
 {
-    if(voltage < 1.0f || voltage > 5.5f)
+    if (voltage < 1.0f || voltage > 5.5f)
     {
         return 0xff;
     }
