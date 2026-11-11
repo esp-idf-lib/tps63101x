@@ -11,8 +11,8 @@ resistors.
 
 | Name | Description | Defaults |
 |------|-------------|----------|
-| `CONFIG_EXAMPLE_I2C_MASTER_SCL` | GPIO number for `SCL` | "18" for `esp32`, `esp32s2`, and `esp32s3` |
-| `CONFIG_EXAMPLE_I2C_MASTER_SDA` | GPIO number for `SDA` | "17" for `esp32`, `esp32s2`, and `esp32s3` |
+| `CONFIG_EXAMPLE_I2C_MASTER_SCL` | GPIO number for `SCL` | "19" for `esp32`, `esp32s2`, and `esp32s3`, "6" for `esp32c2`, `esp32c3`, `esp32c5`, `esp32c6`, and `esp32c61`, "4" for `esp32h2`, and `esp32p4` |
+| `CONFIG_EXAMPLE_I2C_MASTER_SDA` | GPIO number for `SDA` | "18" for `esp32`, `esp32s2`, and `esp32s3`, "5" for `esp32c2`, `esp32c3`, `esp32c5`, `esp32c6`, and `esp32c61`, "3" for `esp32h2`, and `esp32p4` |
 
 ## Example log
 
